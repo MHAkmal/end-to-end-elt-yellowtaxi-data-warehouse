@@ -1,0 +1,221 @@
+[0m21:55:50.723084 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000207D02D7810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000207D030B210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000207D0309C50>]}
+
+
+============================== 21:55:50.790913 | fae4fd66-2650-4f41-bda7-50c9a4a37bcf ==============================
+[0m21:55:50.790913 [info ] [MainThread]: Running with dbt=1.10.5
+[0m21:55:50.791824 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'profiles_dir': 'C:\\Workspace\\nyc-taxi-pipeline\\.dbt', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'invocation_command': 'dbt init nyc_taxi_tripdata', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m21:55:51.131306 [debug] [MainThread]: Starter project path: C:\Workspace\nyc-taxi-pipeline\env\Lib\site-packages\dbt\include\starter_project
+[0m21:55:51.154027 [info ] [MainThread]: 
+Your new dbt project "nyc_taxi_tripdata" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m21:55:51.155537 [info ] [MainThread]: Setting up your profile.
+[0m21:56:56.035669 [error] [MainThread]: Encountered an error:
+
+[0m21:56:56.039623 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Workspace\nyc-taxi-pipeline\env\Lib\site-packages\dbt\cli\requires.py", line 178, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Workspace\nyc-taxi-pipeline\env\Lib\site-packages\dbt\cli\requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Workspace\nyc-taxi-pipeline\env\Lib\site-packages\dbt\cli\main.py", line 483, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "C:\Workspace\nyc-taxi-pipeline\env\Lib\site-packages\dbt\task\init.py", line 346, in run
+    self.setup_profile(profile_name)
+  File "C:\Workspace\nyc-taxi-pipeline\env\Lib\site-packages\dbt\task\init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "C:\Workspace\nyc-taxi-pipeline\env\Lib\site-packages\dbt\task\init.py", line 179, in create_profile_from_target
+    self.create_profile_from_profile_template(profile_template, profile_name)
+  File "C:\Workspace\nyc-taxi-pipeline\env\Lib\site-packages\dbt\task\init.py", line 163, in create_profile_from_profile_template
+    target = self.generate_target_from_input(prompts, initial_target)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Workspace\nyc-taxi-pipeline\env\Lib\site-packages\dbt\task\init.py", line 129, in generate_target_from_input
+    target[key] = click.prompt(
+                  ^^^^^^^^^^^^^
+  File "C:\Workspace\nyc-taxi-pipeline\env\Lib\site-packages\click\termui.py", line 168, in prompt
+    value = prompt_func(prompt)
+            ^^^^^^^^^^^^^^^^^^^
+  File "C:\Workspace\nyc-taxi-pipeline\env\Lib\site-packages\click\termui.py", line 151, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m21:56:56.042152 [debug] [MainThread]: Command `dbt init` failed at 21:56:56.042152 after 65.36 seconds
+[0m21:56:56.043446 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000207D02DE210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000207D033F790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000207D033F410>]}
+[0m21:56:56.044471 [debug] [MainThread]: Flushing usage events
+[0m21:56:57.561683 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:57:31.366014 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B4D35E0590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B4D35D6910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B4D35D5DD0>]}
+
+
+============================== 21:57:31.369014 | 6831d74f-0cf9-4d32-a6be-396557f189d5 ==============================
+[0m21:57:31.369014 [info ] [MainThread]: Running with dbt=1.10.5
+[0m21:57:31.370013 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': 'C:\\Workspace\\nyc-taxi-pipeline\\.dbt', 'log_path': 'logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt init dbt_test', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m21:57:31.381131 [debug] [MainThread]: Starter project path: C:\Workspace\nyc-taxi-pipeline\env\Lib\site-packages\dbt\include\starter_project
+[0m21:57:31.394111 [info ] [MainThread]: 
+Your new dbt project "dbt_test" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m21:57:31.394111 [info ] [MainThread]: Setting up your profile.
+[0m21:59:21.354045 [info ] [MainThread]: Profile dbt_test written to C:\Workspace\nyc-taxi-pipeline\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m21:59:21.355552 [debug] [MainThread]: Command `dbt init` succeeded at 21:59:21.355552 after 110.03 seconds
+[0m21:59:21.356565 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B4CC922A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B4CC922590>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B4CC9225D0>]}
+[0m21:59:21.357559 [debug] [MainThread]: Flushing usage events
+[0m21:59:22.969438 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:59:32.801285 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021FD9093C50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021FDC6B61D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021FDC467C10>]}
+
+
+============================== 21:59:32.803284 | cc2c172e-1e38-4c34-900e-c4c50fbf498e ==============================
+[0m21:59:32.803284 [info ] [MainThread]: Running with dbt=1.10.5
+[0m21:59:32.804284 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'debug': 'False', 'profiles_dir': 'C:\\Workspace\\nyc-taxi-pipeline\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt debug', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m21:59:32.821693 [info ] [MainThread]: dbt version: 1.10.5
+[0m21:59:32.822051 [info ] [MainThread]: python version: 3.11.9
+[0m21:59:32.822051 [info ] [MainThread]: python path: C:\Workspace\nyc-taxi-pipeline\env\Scripts\python.exe
+[0m21:59:32.822051 [info ] [MainThread]: os info: Windows-10-10.0.26100-SP0
+[0m21:59:32.854064 [info ] [MainThread]: Using profiles dir at C:\Workspace\nyc-taxi-pipeline\.dbt
+[0m21:59:32.855066 [info ] [MainThread]: Using profiles.yml file at C:\Workspace\nyc-taxi-pipeline\.dbt\profiles.yml
+[0m21:59:32.855066 [info ] [MainThread]: Using dbt_project.yml file at C:\Workspace\nyc-taxi-pipeline\dags\dbt_project.yml
+[0m21:59:32.860653 [info ] [MainThread]: adapter type: postgres
+[0m21:59:32.860653 [info ] [MainThread]: adapter version: 1.9.0
+[0m21:59:32.862052 [info ] [MainThread]: Configuration:
+[0m21:59:32.862052 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m21:59:32.862052 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m21:59:32.863056 [info ] [MainThread]: Required dependencies:
+[0m21:59:32.863056 [debug] [MainThread]: Executing "git --help"
+[0m21:59:32.888292 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m21:59:32.889075 [debug] [MainThread]: STDERR: "b''"
+[0m21:59:32.889075 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m21:59:32.890079 [info ] [MainThread]: Connection:
+[0m21:59:32.890079 [info ] [MainThread]:   host: docker.host.internal
+[0m21:59:32.890079 [info ] [MainThread]:   port: 5432
+[0m21:59:32.890079 [info ] [MainThread]:   user: postgres
+[0m21:59:32.891079 [info ] [MainThread]:   database: bronze
+[0m21:59:32.891079 [info ] [MainThread]:   schema: dbt_test
+[0m21:59:32.891079 [info ] [MainThread]:   connect_timeout: 10
+[0m21:59:32.891079 [info ] [MainThread]:   role: None
+[0m21:59:32.892079 [info ] [MainThread]:   search_path: None
+[0m21:59:32.892079 [info ] [MainThread]:   keepalives_idle: 0
+[0m21:59:32.892079 [info ] [MainThread]:   sslmode: None
+[0m21:59:32.892079 [info ] [MainThread]:   sslcert: None
+[0m21:59:32.893079 [info ] [MainThread]:   sslkey: None
+[0m21:59:32.893079 [info ] [MainThread]:   sslrootcert: None
+[0m21:59:32.893079 [info ] [MainThread]:   application_name: dbt
+[0m21:59:32.893079 [info ] [MainThread]:   retries: 1
+[0m21:59:32.894079 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m21:59:33.000021 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m21:59:36.523987 [debug] [MainThread]: Using postgres connection "debug"
+[0m21:59:36.525493 [debug] [MainThread]: On debug: select 1 as id
+[0m21:59:36.525493 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m21:59:36.541729 [debug] [MainThread]: Postgres adapter: Got a retryable error when attempting to open a postgres connection.
+1 attempts remaining. Retrying in 0 seconds.
+Error:
+could not translate host name "docker.host.internal" to address: No such host is known. 
+
+[0m21:59:36.542733 [debug] [MainThread]: Postgres adapter: Error running SQL: select 1 as id
+[0m21:59:36.543309 [debug] [MainThread]: Postgres adapter: Rolling back transaction.
+[0m21:59:36.544318 [debug] [MainThread]: On debug: No close available on handle
+[0m21:59:36.544318 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m21:59:36.545317 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m21:59:36.546318 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Workspace\nyc-taxi-pipeline\dags\dbt_project.yml> not found
+
+[0m21:59:36.546318 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  could not translate host name "docker.host.internal" to address: No such host is known. 
+  
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m21:59:36.548951 [debug] [MainThread]: Command `dbt debug` failed at 21:59:36.548951 after 3.80 seconds
+[0m21:59:36.549951 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m21:59:36.549951 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021FDC6C35D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021FDC6FC210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021FD5AD22D0>]}
+[0m21:59:36.550951 [debug] [MainThread]: Flushing usage events
+[0m21:59:37.768363 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m22:01:26.300877 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021F81AB2F10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021F81A8C510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021F81A47C90>]}
+
+
+============================== 22:01:26.304015 | 0b8e31b8-630a-44d3-ba10-b46d68b0693d ==============================
+[0m22:01:26.304015 [info ] [MainThread]: Running with dbt=1.10.5
+[0m22:01:26.304015 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Workspace\\nyc-taxi-pipeline\\.dbt', 'debug': 'False', 'version_check': 'True', 'log_path': 'logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'invocation_command': 'dbt debug', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m22:01:26.314449 [info ] [MainThread]: dbt version: 1.10.5
+[0m22:01:26.314449 [info ] [MainThread]: python version: 3.11.9
+[0m22:01:26.315872 [info ] [MainThread]: python path: C:\Workspace\nyc-taxi-pipeline\env\Scripts\python.exe
+[0m22:01:26.315872 [info ] [MainThread]: os info: Windows-10-10.0.26100-SP0
+[0m22:01:26.348790 [info ] [MainThread]: Using profiles dir at C:\Workspace\nyc-taxi-pipeline\.dbt
+[0m22:01:26.349791 [info ] [MainThread]: Using profiles.yml file at C:\Workspace\nyc-taxi-pipeline\.dbt\profiles.yml
+[0m22:01:26.349791 [info ] [MainThread]: Using dbt_project.yml file at C:\Workspace\nyc-taxi-pipeline\dags\dbt_project.yml
+[0m22:01:26.350792 [info ] [MainThread]: adapter type: postgres
+[0m22:01:26.350792 [info ] [MainThread]: adapter version: 1.9.0
+[0m22:01:26.351791 [info ] [MainThread]: Configuration:
+[0m22:01:26.351791 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m22:01:26.351791 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m22:01:26.352791 [info ] [MainThread]: Required dependencies:
+[0m22:01:26.352791 [debug] [MainThread]: Executing "git --help"
+[0m22:01:26.371773 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Reset current HEAD to the specified state\n   switch     Switch branches\n   tag        Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m22:01:26.372780 [debug] [MainThread]: STDERR: "b''"
+[0m22:01:26.372780 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m22:01:26.372780 [info ] [MainThread]: Connection:
+[0m22:01:26.373774 [info ] [MainThread]:   host: localhost
+[0m22:01:26.373774 [info ] [MainThread]:   port: 5432
+[0m22:01:26.374543 [info ] [MainThread]:   user: postgres
+[0m22:01:26.374543 [info ] [MainThread]:   database: bronze
+[0m22:01:26.374543 [info ] [MainThread]:   schema: dbt_test
+[0m22:01:26.374543 [info ] [MainThread]:   connect_timeout: 10
+[0m22:01:26.376051 [info ] [MainThread]:   role: None
+[0m22:01:26.376051 [info ] [MainThread]:   search_path: None
+[0m22:01:26.376596 [info ] [MainThread]:   keepalives_idle: 0
+[0m22:01:26.376596 [info ] [MainThread]:   sslmode: None
+[0m22:01:26.376596 [info ] [MainThread]:   sslcert: None
+[0m22:01:26.376596 [info ] [MainThread]:   sslkey: None
+[0m22:01:26.376596 [info ] [MainThread]:   sslrootcert: None
+[0m22:01:26.377599 [info ] [MainThread]:   application_name: dbt
+[0m22:01:26.377599 [info ] [MainThread]:   retries: 1
+[0m22:01:26.377599 [info ] [MainThread]: Registered adapter: postgres=1.9.0
+[0m22:01:26.479398 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m22:01:26.507536 [debug] [MainThread]: Using postgres connection "debug"
+[0m22:01:26.507536 [debug] [MainThread]: On debug: select 1 as id
+[0m22:01:26.507536 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:01:28.579439 [debug] [MainThread]: SQL status: SELECT 1 in 2.071 seconds
+[0m22:01:28.579942 [debug] [MainThread]: On debug: Close
+[0m22:01:28.579942 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m22:01:28.580950 [info ] [MainThread]: [31m1 check failed:[0m
+[0m22:01:28.581471 [info ] [MainThread]: Project loading failed for the following reason:
+ project path <C:\Workspace\nyc-taxi-pipeline\dags\dbt_project.yml> not found
+
+[0m22:01:28.582109 [debug] [MainThread]: Command `dbt debug` failed at 22:01:28.582109 after 2.34 seconds
+[0m22:01:28.582109 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m22:01:28.582738 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021F81A53A50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021F81A534D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021F81A50A10>]}
+[0m22:01:28.582738 [debug] [MainThread]: Flushing usage events
+[0m22:01:30.111453 [debug] [MainThread]: An error was encountered while trying to flush usage events

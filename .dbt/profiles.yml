@@ -1,0 +1,14 @@
+
+nyctaxi:
+  outputs:
+    dev:
+      account: # your-snowflake-account-url for example 'ABC1234.ap-southeast-3.aws.snowflakecomputing.com'
+      database: BRONZE
+      password: # snowflake-password
+      role: ACCOUNTADMIN
+      schema: NYCTAXI
+      threads: 4
+      type: snowflake
+      user: # snowflake-username
+      warehouse: COMPUTE_WH
+  target: dev

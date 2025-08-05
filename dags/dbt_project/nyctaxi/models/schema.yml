@@ -1,0 +1,228 @@
+version: 2
+
+sources:
+  - name: nyctaxi_bronze
+    database: BRONZE
+    schema: NYCTAXI
+    description: "Raw taxi trip data loaded from source systems into Snowflake."
+    tables:
+      - name: yellowtaxi_2021
+        description: "Raw yellow taxi trip records for the year 2021."
+      - name: yellowtaxi_2022
+        description: "Raw yellow taxi trip records for the year 2022."
+      - name: yellowtaxi_2023
+        description: "Raw yellow taxi trip records for the year 2023."
+      - name: yellowtaxi_2024
+        description: "Raw yellow taxi trip records for the year 2024."
+
+seeds:
+  - name: taxi_zone_lookup
+    description: "A mapping of LocationIDs to borough and zone names."
+    columns:
+      - name: LocationID
+        description: "The unique identifier for the taxi zone."
+        tests:
+          - unique
+          - not_null
+      - name: Borough
+        description: "The NYC borough for the taxi zone."
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Manhattan', 'Queens', 'Brooklyn', 'Bronx', 'Staten Island', 'EWR', 'Unknown', 'N/A']
+
+models:
+### STAGING
+
+  - name: stg_yellowtaxi_tripdata
+    description: "Staging model for yellow taxi trips. Unions data from all years, cleans column names, and performs basic type casting."
+    columns:
+      - name: trip_id
+        description: "A unique surrogate key generated for each trip."
+        tests:
+          - unique
+          - not_null
+      - name: vendor_id
+        tests:
+          - not_null
+      - name: rate_code_id
+        tests:
+          - not_null
+      - name: pickup_location_id
+        tests:
+          - not_null
+      - name: dropoff_location_id
+        tests:
+          - not_null
+      - name: payment_type_id
+        tests:
+          - not_null
+      - name: store_and_fwd_flag
+        tests:
+          - not_null
+      - name: pickup_datetime
+        tests:
+          - not_null
+      - name: dropoff_datetime
+        tests:
+          - not_null
+      - name: passenger_count
+        tests:
+          - not_null
+      - name: trip_distance
+        tests:
+          - not_null
+      - name: fare_amount
+        tests:
+          - not_null
+      - name: extra
+        tests:
+          - not_null
+      - name: mta_tax
+        tests:
+          - not_null
+      - name: tip_amount
+        tests:
+          - not_null
+      - name: tolls_amount
+        tests:
+          - not_null
+      - name: improvement_surcharge
+        tests:
+          - not_null
+      - name: total_amount
+        tests:
+          - not_null
+      - name: congestion_surcharge
+        tests:
+          - not_null
+      - name: airport_fee
+        tests:
+          - not_null
+
+  - name: stg_taxizone_lookup
+    description: "Staging model for taxi zone lookups. Cleans and standardizes data from the seed file."
+    columns:
+      - name: location_id
+        description: "The unique identifier for the taxi zone."
+        tests:
+          - unique
+          - not_null
+
+### INTERMEDIATE
+
+  - name: int_trip_details
+    description: "Intermediate model that joins trip data with location details and calculates trip duration."
+    columns:
+      - name: trip_id
+        description: "The unique surrogate key for the trip."
+        tests:
+          - unique
+          - not_null
+
+### MART-CORE
+
+  - name: dim_datetime
+    description: "Dimension table for time-based analysis, broken down by date and time parts."
+    columns:
+      - name: datetime_sk
+        description: "The unique surrogate key for the timestamp."
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_location
+    description: "Dimension table containing taxi zone information."
+    columns:
+      - name: location_sk
+        description: "The unique identifier for the taxi zone."
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_payment_type
+    description: "Dimension table that decodes payment type IDs into human-readable names."
+    columns:
+      - name: payment_type_sk
+        description: "The unique identifier for the payment type."
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_rate_code
+    description: "Dimension table that decodes rate code IDs into human-readable names."
+    columns:
+      - name: rate_code_sk
+        description: "The unique identifier for the rate code."
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_vendor
+    description: "Dimension table that decodes rate code IDs into human-readable names."
+    columns:
+      - name: vendor_sk
+        description: "The unique identifier for the rate code."
+        tests:
+          - unique
+          - not_null
+
+  - name: fct_trips
+    description: "The central fact table containing all trip measures and foreign keys to dimension tables."
+    columns:
+      - name: trip_sk
+        description: "The unique surrogate key for the trip."
+        tests:
+          - unique
+          - not_null
+
+      - name: datetime_sk
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_datetime')
+              field: datetime_sk
+
+      - name: location_sk
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_location')
+              field: location_sk
+
+      - name: payment_type_sk
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_payment_type')
+              field: payment_type_sk
+
+      - name: rate_code_sk
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_rate_code')
+              field: rate_code_sk
+
+      - name: vendor_sk
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_vendor')
+              field: vendor_sk
+
+### MART-BUSINESS
+
+  - name: mart_trip_summary_hourly
+    description: "Business mart summarizing trip counts and revenue by hour and day of the week to identify peak demand."
+
+  - name: mart_location_summary
+    description: "Business mart summarizing trip counts, revenue, and tipping behavior by pickup location to identify popular hotspots."
+
+  - name: mart_payment_type_analysis
+    description: "Business mart analyzing trip volume and tipping behavior across different payment methods."
+
+### Machine Learning Ready 
+
+  - name: mart_ml_training_set
+    description: "A denormalized table designed as a feature set for machine learning models to predict trip fare or duration."

@@ -34,3 +34,6 @@ This project ingest data from parquet files in google drive and tables in postgr
 
 ## dbt-docs index.html
 ![dbt-docs-index.html](https://drive.google.com/uc?export=view&id=1y0BjhM9B4UQb4YAPxG60aMx7zkLE8QtZ)
+
+# Conclusion
+Star schema models created well referencing intermediate, staging, and also raw source. You can extend this project by extending the star schema and mart dataset to build visualization and machine learning model related to NYC Taxi Business.

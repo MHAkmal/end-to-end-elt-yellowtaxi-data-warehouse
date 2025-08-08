@@ -21,6 +21,9 @@ This project ingest data from parquet files in google drive and tables in postgr
 ### DAG Run
 ![DAG Run](https://drive.google.com/uc?export=view&id=1kwfvqJJTod_CW-NTJmCPyes3u8nXotzz)
 
+## Airbyte Connection
+![Airbyte Connection](https://drive.google.com/uc?export=view&id=1WWbZIymh1L9Op9h2NgoBQXdqD4eCXdVe)
+
 ## Snowflake
 | Bronze    | Silver   | Gold |
 | :-------: | :------: | :-------: |

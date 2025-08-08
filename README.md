@@ -15,6 +15,37 @@ This project ingest data from parquet files in google drive and tables in postgr
 - [Snowflake account](https://www.snowflake.com/en/)
 - [NYC-TLC-Taxi-Trip-Data-Sampled](https://drive.google.com/drive/folders/12HGoYKjYh8XQci7tGTqy6cE1MHSt_WBY?usp=sharing)
 
+## Project Structure
+```bash
+├── .astro/
+├── .dbt/                                       
+│   ├── .user.yml
+│   └── profiles.yml                            # dbt project profile setting
+├── assets/
+├── dags/
+│   ├── dbt_project/
+│   │   └── nyctaxi/                            # dbt project folder
+│   │       └── __init__.py
+│   ├── logs/
+│   ├── .airflowignore
+│   └── elt_yellowtaxi_pipeline_dag.py          # main Airflow data pipeline DAG
+├── include/
+│   ├── data/
+│   └── profiles.py                             # dbt profile setting for integration with airflow
+├── logs/
+├── plugins/
+├── tests/
+├── .dockerignore
+├── .env
+├── .gitignore
+├── docker-compose.override.yml                 # minio service
+├── Dockerfile                                  # extendable and customizable airflow-astro image
+├── LICENSE
+├── packages.txt
+├── README.md
+└── requirements.txt                            # python package required (airflow provider and other libraries)
+```
+
 ## DAG (Direct Acyclic Graph)
 ### DAG Graph
 ![DAG Graph](https://drive.google.com/uc?export=view&id=1ohdI2jsiW4YFV_sdvsq4gFf94g-T1ME1)

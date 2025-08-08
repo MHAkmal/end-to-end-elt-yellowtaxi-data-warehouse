@@ -1,5 +1,4 @@
 -- models/marts/ml/mart_ml_training_set.sql
--- Creates a denormalized table for predicting total_amount or trip_duration.
 
 select
     -- Target Variables

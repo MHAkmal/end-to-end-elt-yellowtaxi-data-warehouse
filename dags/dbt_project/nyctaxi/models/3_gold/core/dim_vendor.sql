@@ -1,4 +1,4 @@
-
+-- models/gold/dim_vendor.sql
 
 select  
     {{ dbt_utils.generate_surrogate_key(['vendor_id']) }} as vendor_sk,

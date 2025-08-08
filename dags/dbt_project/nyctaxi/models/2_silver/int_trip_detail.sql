@@ -1,4 +1,4 @@
--- models/silver/int_trip_details_enriched.sql
+-- models/silver/int_trip_detail.sql
 
 with trips as (
     select * 

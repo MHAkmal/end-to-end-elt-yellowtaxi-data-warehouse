@@ -116,7 +116,7 @@ with DAG(
     end = EmptyOperator(
         task_id = "end_task")
 
-    # --- Updated Pipeline Flow ---
+    
     start >> create_db_and_schema >> [parquet1_to_snowflake, parquet2_to_snowflake, postgres_to_snowflake]
     
     [parquet1_to_snowflake, parquet2_to_snowflake, postgres_to_snowflake] >> check_yellowtaxi_tables_exist

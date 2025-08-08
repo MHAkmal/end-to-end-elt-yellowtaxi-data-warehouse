@@ -1,4 +1,4 @@
--- models/marts/business/mart_trip_summary_hourly.sql
+-- models/marts/business/mart_trip_time_summary.sql
 
 select
     dt.hour,

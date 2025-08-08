@@ -1,4 +1,4 @@
--- models/1_bronze/stg_yellow_tripdata.sql
+-- models/1_bronze/stg_yellowtaxi_tripdata.sql
 
 with combined_data as (
 

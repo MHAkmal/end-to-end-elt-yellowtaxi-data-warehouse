@@ -1,4 +1,4 @@
--- models/gold/core/dim_datetime.sql
+--- models/gold/core/dim_datetime.sql
 
 with extracted_datetime as (
 select

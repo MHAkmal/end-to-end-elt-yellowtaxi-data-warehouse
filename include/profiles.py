@@ -7,7 +7,7 @@ dbt_executable_path=str(Path('/usr/local/airflow/dbt_venv/bin/dbt')) # Path dbt 
 profiles_yml_filepath=Path(f"{dir_profiles_path}/profiles.yml").as_posix() # Path dbt profile
 
 
-#####################       [nyctaxi] dbt project profile and configuration       ########################
+######################       [nyctaxi] dbt project profile and configuration       ########################
 
 project_path_nyctaxi=Path('/usr/local/airflow/dags/dbt_project/nyctaxi').as_posix() # Path dbt project
 

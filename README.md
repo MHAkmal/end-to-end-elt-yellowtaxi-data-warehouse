@@ -45,6 +45,8 @@ This project ingest data from parquet files in google drive and tables in postgr
 ├── README.md
 └── requirements.txt                            # python package required (airflow provider and other libraries)
 ```
+## NYC Yellow Taxi Star Schema Diagram
+![NYC Yellow Taxi Star Schema](https://drive.google.com/uc?export=view&id=1mABdLnk9eZqPtT8bMbypNNo5MYWHYDca)
 
 ## DAG (Direct Acyclic Graph)
 ### DAG Graph
